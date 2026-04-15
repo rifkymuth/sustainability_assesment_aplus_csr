@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --pale-sky: #b3d5e9;
+  --ash-grey: #bdbea9;
+  --muted-teal: #8db38b;
+  --jungle-teal: #56876d;
+  --deep-teal: #3f6451;
+  --cream: #f8f7f2;
+}
+
+html,
+body {
+  background-color: var(--cream);
+  color: #1f2a26;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-jungle-teal px-7 py-3.5 text-base font-semibold text-white shadow-soft transition-all duration-200 hover:bg-deep-teal hover:shadow-glow focus:outline-none focus:ring-4 focus:ring-jungle-teal/30;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-jungle-teal/80 bg-white/70 px-7 py-3.5 text-base font-semibold text-jungle-teal backdrop-blur-md transition-all duration-200 hover:bg-jungle-teal hover:text-white focus:outline-none focus:ring-4 focus:ring-jungle-teal/20;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-deep-teal transition-colors hover:bg-jungle-teal/10;
+  }
+
+  .card {
+    @apply rounded-3xl bg-white/90 p-8 shadow-soft ring-1 ring-jungle-teal/10 backdrop-blur-sm;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full bg-pale-sky/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-deep-teal;
+  }
+
+  .section {
+    @apply mx-auto w-full max-w-7xl px-6 py-20 sm:px-8 lg:px-10;
+  }
+
+  .heading-display {
+    @apply font-display text-4xl font-semibold leading-tight tracking-tight text-deep-teal sm:text-5xl lg:text-6xl;
+  }
+
+  .heading-section {
+    @apply font-display text-3xl font-semibold leading-tight tracking-tight text-deep-teal sm:text-4xl;
+  }
+
+  .body-muted {
+    @apply text-base leading-relaxed text-slate-600 sm:text-lg;
+  }
+}
+
+/* Decorative blob shapes used as background flourishes */
+.blob {
+  position: absolute;
+  filter: blur(60px);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
